@@ -73,4 +73,4 @@ var knight = function(a, b) {
 
 }
 
-console.log(knight(12,20));
+console.log('end', knight(12,21));
