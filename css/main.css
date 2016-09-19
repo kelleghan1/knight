@@ -5,11 +5,46 @@ body {
 }
 
 header {
+  padding: 20px;
   overflow: auto;
   background-color: #000;
   color: #fff;
 }
 
+.square {
+  flex-grow: 1;
+  padding: 2px;
+  float: left;
+  border: 0.5px solid black;
+  box-sizing: border-box;
+  height: calc(100vw/29);
+}
+
+.options {
+  padding: 20px;
+}
+
+.optionInput {
+  padding: 0 20px 0 0;
+  display: inline;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  overflow: auto;
+}
+
+.square_text {
+  font-size: 8px;
+}
+
+.quadrant {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+}
 .container {
 
 }
