@@ -32,9 +32,11 @@ thisApp
       ]
 
       var dest = {
-        x: a,
-        y: b
+        x: parseInt(a),
+        y: parseInt(b)
       }
+
+      angular.element( document.querySelectorAll('.square')).css({'background-color': 'white'})
 
       $scope.turnsTaken.push(dest)
 
@@ -45,7 +47,6 @@ thisApp
 
         if (d.x == 0  && d.y == 0) {
           return $scope.turns
-          console.log('done1', $scope.turns);
         }
 
         // CREATE NEW POSITIONS -----------------
@@ -70,7 +71,6 @@ thisApp
 
             $scope.turns++
 
-            console.log('done2', $scope.turns);
             return $scope.turns
 
           } else {
@@ -88,7 +88,6 @@ thisApp
 
                 $scope.turns = $scope.turns + 2
 
-                console.log('done3', $scope.turns);
                 return $scope.turns
 
               } else {
@@ -104,10 +103,9 @@ thisApp
 
                   if (tempPos2[m].x == 0 && tempPos2[m].y == 0) {
                     $scope.turns = $scope.turns + 3
-                    $scope.turnsTaken.push(closest)
+                    $scope.turnsTaken.push(newPos[j])
                     $scope.turnsTaken.push(tempPos[l])
                     $scope.turnsTaken.push(tempPos2[m])
-                    console.log('done4', $scope.turns);
                     return $scope.turns
                   }
 
@@ -121,7 +119,6 @@ thisApp
 
         }
 
-        console.log('closest', closest);
         $scope.turns++
         $scope.turnsTaken.push(closest)
         start(closest)
@@ -129,12 +126,19 @@ thisApp
       }
 
       start(dest)
+
+
+      for (var i = 0; i < $scope.turnsTaken.length; i++) {
+        angular.element( document.querySelector('#s' + $scope.turnsTaken[i].x + '-' + $scope.turnsTaken[i].y)).css({'background-color': 'red'})
+      }
+
       console.log('turnsTaken', $scope.turnsTaken);
+
       return $scope.turns
 
     }
 
-    console.log('end', $scope.knight(8,-2));
+    // console.log('end', $scope.knight(4,4));
 
 
   }

@@ -6,10 +6,10 @@
   <div class="options">
     <form ng-submit="knight(xcoord, ycoord)">
       <label class='optionInput'>X Coordinate
-        <input type="text" ng-model='xcoord'>
+        <input type="text" name='xcoord' ng-model='xcoord'>
       </label>
       <label class='optionInput'>Y Coordinate
-        <input type="text" ng-model='ycoord'>
+        <input type="text" name='ycoord' ng-model='ycoord'>
       </label>
       <p class='optionInput'>Moves: {{turns}}</p>
       <button type="submit">Submit</button>
@@ -20,25 +20,25 @@
 
     <div class='quadrant'>
       <div ng-repeat='row in rows | orderBy: "-"' class='row'>
-        <div ng-repeat='square in squares.slice(0, squares.length - 1) | orderBy: "-"' class='square' id='{{ "s" + -square.id + "." + row.id}}' height='{{this.height}}'>
+        <div ng-repeat='square in squares.slice(0, squares.length - 1) | orderBy: "-"' class='square' id='{{ "s-" + (square.id + 1) + "-" + row.id}}'>
           <p class='square_text'>{{-(square.id + 1)}} * {{row.id}}</p>
         </div>
       </div>
     </div><div class='quadrant'>
       <div ng-repeat='row in rows | orderBy: "-"' class='row'>
-        <div ng-repeat='square in squares' class='square' id='{{ "s" + square.id + "." + row.id}}'>
+        <div ng-repeat='square in squares' class='square' id='{{ "s" + square.id + "-" + row.id}}'>
           <p class='square_text'>{{square.id}} * {{row.id}}</p>
         </div>
       </div>
     </div><div class='quadrant'>
       <div ng-repeat='row in rows.slice(0, rows.length - 1)' class='row'>
-        <div ng-repeat='square in squares.slice(0, squares.length - 1) | orderBy: "-"' class='square' id='{{ "s" + -square.id + "." + -row.id}}'>
+        <div ng-repeat='square in squares.slice(0, squares.length - 1) | orderBy: "-"' class='square' id='{{ "s-" + (square.id + 1) + "-" + "-" + (row.id + 1)}}'>
           <p class='square_text'>{{-(square.id + 1)}} * {{-(row.id + 1)}}</p>
         </div>
       </div>
     </div><div class='quadrant'>
       <div ng-repeat='row in rows.slice(0, rows.length - 1)' class='row'>
-        <div ng-repeat='square in squares' class='square' id='{{ "s" + square.id + "." + -row.id}}'>
+        <div ng-repeat='square in squares' class='square' id='{{ "s" + square.id + "-" + "-" + (row.id + 1)}}'>
           <p class='square_text'>{{square.id}} * {{-(row.id + 1)}}</p>
         </div>
       </div>
