@@ -143,18 +143,13 @@ thisApp
 
       start(dest)
 
-
       function customLoop(i) {
         angular.element( document.querySelector('#s' + $scope.turnsTaken[i].x + '-' + $scope.turnsTaken[i].y)).css({'background-color': '#00ddff'})
         i--;
-        if (i>=0) {$timeout(function(){customLoop(i);},500);}
+        if (i>=0) {$timeout(function(){customLoop(i);},300);}
         $scope.turnsDisplay++
       }
       customLoop($scope.turnsTaken.length-1);
-
-
-
-      console.log('turnsTaken', $scope.turnsDisplay);
 
       return $scope.turns
 
