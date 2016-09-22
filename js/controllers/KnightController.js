@@ -58,7 +58,7 @@ thisApp
         // FIND CLOSEST -----------------
 
         for (var b = 0; b < newPos.length; b++) {
-          if (closest == null || (Math.abs(0 - newPos[b].x) + Math.abs(0 - newPos[b].y) < (Math.abs(0 - closest.x) + Math.abs(0 - closest.y))) ) {
+          if (closest == null || (Math.abs(0 - newPos[b].x) + Math.abs(0 - newPos[b].y) <= (Math.abs(0 - closest.x) + Math.abs(0 - closest.y))) ) {
             closest = newPos[b]
           }
         }
@@ -91,6 +91,7 @@ thisApp
                 return $scope.turns
 
               } else {
+
                 var tempPos2 = []
 
                 // CREATE NEW POSITIONS 3 -----------------
@@ -106,6 +107,7 @@ thisApp
                     $scope.turnsTaken.push(newPos[j])
                     $scope.turnsTaken.push(tempPos[l])
                     $scope.turnsTaken.push(tempPos2[m])
+                    console.log(newPos[j], tempPos[l], tempPos2[m]);
                     return $scope.turns
                   }
 
