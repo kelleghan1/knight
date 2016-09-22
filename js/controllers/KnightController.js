@@ -87,7 +87,8 @@ thisApp
               if (tempPos[l].x == 0 && tempPos[l].y == 0) {
 
                 $scope.turns = $scope.turns + 2
-
+                $scope.turnsTaken.push(newPos[j])
+                $scope.turnsTaken.push(tempPos[l])
                 return $scope.turns
 
               } else {
@@ -107,7 +108,6 @@ thisApp
                     $scope.turnsTaken.push(newPos[j])
                     $scope.turnsTaken.push(tempPos[l])
                     $scope.turnsTaken.push(tempPos2[m])
-                    console.log(newPos[j], tempPos[l], tempPos2[m]);
                     return $scope.turns
                   }
 
