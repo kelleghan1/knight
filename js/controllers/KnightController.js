@@ -43,6 +43,7 @@ thisApp
       var start = function(d){
 
         var newPos = [];
+        var closestArr = [];
         var closest = null;
 
         if (d.x == 0  && d.y == 0) {
@@ -60,6 +61,17 @@ thisApp
         for (var b = 0; b < newPos.length; b++) {
           if (closest == null || (Math.abs(0 - newPos[b].x) + Math.abs(0 - newPos[b].y) <= (Math.abs(0 - closest.x) + Math.abs(0 - closest.y))) ) {
             closest = newPos[b]
+          }
+        }
+        for (var u = 0; u < newPos.length; u++) {
+          if ( (Math.abs(0 - newPos[u].x) + Math.abs(0 - newPos[u].y) == (Math.abs(0 - closest.x) + Math.abs(0 - closest.y))) ) {
+            closestArr.push(newPos[u])
+          }
+        }
+
+        for (var q = 0; q < closestArr.length; q++) {
+          if ( Math.abs((Math.abs(closestArr[q].x) - Math.abs(closestArr[q].y))) < Math.abs((Math.abs(closest.x) - Math.abs(closest.y))) ) {
+            closest = closestArr[q]
           }
         }
 
