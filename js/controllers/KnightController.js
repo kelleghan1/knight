@@ -1,7 +1,9 @@
 thisApp
 .controller('KnightController', [
+  '$timeout',
   '$scope',
   function(
+    $timeout,
     $scope
   ){
 
@@ -19,6 +21,7 @@ thisApp
 
     $scope.knight = function(a, b) {
       $scope.turns = 0;
+      $scope.turnsDisplay = -1;
       $scope.turnsTaken = [];
       var moves = [
         {x:1, y:2},
@@ -68,7 +71,6 @@ thisApp
             closestArr.push(newPos[u])
           }
         }
-
         for (var q = 0; q < closestArr.length; q++) {
           if ( Math.abs((Math.abs(closestArr[q].x) - Math.abs(closestArr[q].y))) < Math.abs((Math.abs(closest.x) - Math.abs(closest.y))) ) {
             closest = closestArr[q]
@@ -142,11 +144,17 @@ thisApp
       start(dest)
 
 
-      for (var i = 0; i < $scope.turnsTaken.length; i++) {
-        angular.element( document.querySelector('#s' + $scope.turnsTaken[i].x + '-' + $scope.turnsTaken[i].y)).css({'background-color': 'red'})
+      function customLoop(i) {
+        angular.element( document.querySelector('#s' + $scope.turnsTaken[i].x + '-' + $scope.turnsTaken[i].y)).css({'background-color': '#00ddff'})
+        i--;
+        if (i>=0) {$timeout(function(){customLoop(i);},500);}
+        $scope.turnsDisplay++
       }
+      customLoop($scope.turnsTaken.length-1);
 
-      console.log('turnsTaken', $scope.turnsTaken);
+
+
+      console.log('turnsTaken', $scope.turnsDisplay);
 
       return $scope.turns
 
