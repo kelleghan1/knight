@@ -12,9 +12,13 @@ header {
   color: #fff;
 }
 
+section {
+  
+}
+
 .square {
   flex-grow: 1;
-  padding: 1px;
+  padding: 2px;
   float: left;
   border: 0.5px solid black;
   box-sizing: border-box;
@@ -37,7 +41,7 @@ header {
 }
 
 .square_text {
-  font-size: 7px;
+  font-size: 8px;
 }
 
 .quadrant {

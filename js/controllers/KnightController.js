@@ -83,8 +83,8 @@ thisApp
 
           if (closest.x == 0 && closest.y == 0) {
 
+            $scope.turnsTaken.push(closest)
             $scope.turns++
-
             return $scope.turns
 
           } else {
@@ -99,14 +99,12 @@ thisApp
             for (var l = 0; l < tempPos.length; l++) {
 
               if (tempPos[l].x == 0 && tempPos[l].y == 0) {
-
                 $scope.turns = $scope.turns + 2
                 $scope.turnsTaken.push(newPos[j])
                 $scope.turnsTaken.push(tempPos[l])
                 return $scope.turns
 
               } else {
-
                 var tempPos2 = []
 
                 // CREATE NEW POSITIONS 3 -----------------
