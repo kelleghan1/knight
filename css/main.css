@@ -13,16 +13,59 @@ header {
 }
 
 section {
-  
+
+}
+
+.optionWrap {
+  display: inline-block;
 }
 
 .square {
-  flex-grow: 1;
-  padding: 2px;
+  display: flex;
+  flex: 1;
   float: left;
-  border: 0.5px solid black;
+  border: 0.25px solid black;
   box-sizing: border-box;
-  height: calc(100vw/29);
+  cursor: pointer;
+}
+
+.square:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  float: left;
+}
+
+.square_inner {
+  font-size: 6px;
+  background-color: #fff;
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+}
+
+.square_text {
+  box-sizing: border-box;
+  flex-shrink: 1;
+  position: absolute;
+  padding: 1px;
+  margin: 0;
+  font-size: 1em;
+}
+
+.square_inner:hover {
+  position: absolute;
+  z-index: 10000;
+  font-size: 8px;
+  transform: scale(2);
+  min-width: 20px;
+  min-height: 20px;
+  border: 2px solid black;
+}
+
+.square_inner:hover > .square_text {
+  padding: 3px;
+  position: relative;
 }
 
 .options {
@@ -30,19 +73,22 @@ section {
 }
 
 .optionInput {
-  padding: 0 20px 0 0;
+  padding: 20px 0 0 0;
   display: inline;
 }
 
 .row {
   display: flex;
   width: 100%;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
-.square_text {
-  font-size: 8px;
-}
+/*.square_text:hover {
+position: absolute;
+font-size: 12px;
+background-color: white;
+border: 1px solid black;
+}*/
 
 .quadrant {
   border: 1px solid black;
@@ -50,6 +96,7 @@ section {
   width: 50%;
   float: left;
 }
+
 .container {
 
 }
