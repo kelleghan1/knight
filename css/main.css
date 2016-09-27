@@ -5,6 +5,24 @@ body {
   width: 100%;
 }
 
+p {
+  padding: 0;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+}
+
+button {
+  background:none;
+  border:none;
+  font-size:1em;
+  color:blue;
+}
+
 header {
   padding: 20px;
   overflow: auto;
@@ -12,19 +30,43 @@ header {
   color: #fff;
 }
 
-section {
-
+.options {
+  display: flex;
 }
 
 .optionWrap {
-  display: inline-block;
+  display: flex;
+  flex-shrink: 1;
+  background-color: #e2e2e2;
+}
+
+.innerOption {
+  float: left;
+  padding: 10px;
+  flex-grow: 1;
+  background-color: #e2e2e2;
+}
+
+.submitWrap {
+  cursor: pointer;
+  flex-shrink: 1;
+  background-color: #00ddff;
+  padding: 10px;
+}
+
+.movesWrap {
+  padding: 10px;
+  flex-shrink: 1;
+  margin-left: auto;
+  float: right;
+  background-color: #e2e2e2;
 }
 
 .square {
   display: flex;
   flex: 1;
   float: left;
-  border: 0.25px solid black;
+  /*border: 0.25px solid black;*/
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -44,11 +86,15 @@ section {
   display: flex;
 }
 
+.greySquare {
+  background-color: #e2e2e2;
+}
+
 .square_text {
   box-sizing: border-box;
   flex-shrink: 1;
   position: absolute;
-  padding: 1px;
+  padding: 2px;
   margin: 0;
   font-size: 1em;
 }
@@ -57,7 +103,7 @@ section {
   position: absolute;
   z-index: 10000;
   font-size: 8px;
-  transform: scale(2);
+  transform: scale(2.6);
   min-width: 20px;
   min-height: 20px;
   border: 2px solid black;
@@ -68,27 +114,11 @@ section {
   position: relative;
 }
 
-.options {
-  padding: 20px;
-}
-
-.optionInput {
-  padding: 20px 0 0 0;
-  display: inline;
-}
-
 .row {
   display: flex;
   width: 100%;
   /*overflow: auto;*/
 }
-
-/*.square_text:hover {
-position: absolute;
-font-size: 12px;
-background-color: white;
-border: 1px solid black;
-}*/
 
 .quadrant {
   border: 1px solid black;
@@ -97,6 +127,102 @@ border: 1px solid black;
   float: left;
 }
 
-.container {
+@media (max-width: 1200px) {
+  .square_inner:hover {
+    position: absolute;
+    z-index: 10000;
+    font-size: 8px;
+    transform: scale(2.2);
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid black;
+  }
+
+  .square_inner:hover > .square_text {
+    padding: 3px;
+    position: relative;
+  }
+
+  .square_text {
+    font-size: 1.2em;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+  .square_inner:hover {
+    position: absolute;
+    z-index: 10000;
+    font-size: 8px;
+    transform: scale(1.8);
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid black;
+  }
+
+  .square_inner:hover > .square_text {
+    padding: 3px;
+    position: relative;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .square_inner:hover {
+    position: absolute;
+    z-index: 10000;
+    font-size: 8px;
+    transform: scale(1.5);
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid black;
+  }
+
+  .square_inner:hover > .square_text {
+    padding: 3px;
+    position: relative;
+  }
+
+  .options {
+    display: block;
+  }
+
+  .optionWrap {
+    flex-grow: 1;
+    padding: 10px;
+    display: block;
+  }
+
+  .submitWrap {
+    flex-grow: 1;
+    padding: 10px;
+    display: block;
+  }
+
+  .movesWrap {
+    padding: 10px;
+    flex-grow: 1;
+    float: none;
+    display: block;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .square_inner:hover {
+    position: absolute;
+    z-index: 10000;
+    font-size: 8px;
+    transform: scale(1.2);
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid black;
+  }
+
+  .square_inner:hover > .square_text {
+    padding: 3px;
+    position: relative;
+  }
 
 }

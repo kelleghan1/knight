@@ -39,7 +39,7 @@ thisApp
         y: parseInt(b)
       }
 
-      angular.element( document.querySelectorAll('.square_inner')).css({'background-color': 'white'})
+      // angular.element( document.querySelectorAll('.square_inner')).css({'background-color': 'white'})
 
       $scope.turnsTaken.push(dest)
 
