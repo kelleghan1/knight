@@ -5,6 +5,15 @@ body {
   width: 100%;
 }
 
+img {
+  margin: 0 10px 0 0;
+float: left;
+}
+
+h1 {
+  margin: 15px;
+}
+
 p {
   padding: 0;
 }
@@ -24,7 +33,7 @@ button {
 }
 
 header {
-  padding: 20px;
+  padding: 10px;
   overflow: auto;
   background-color: #000;
   color: #fff;
