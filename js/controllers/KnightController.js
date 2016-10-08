@@ -27,13 +27,13 @@ thisApp
     }
 
     $scope.knight = function(a, b) {
-      if (moving == true) {
+      if (moving == true || isNaN(a) == true || isNaN(b) == true) {
         return
       }else{
         moving = true;
       }
       $scope.turns = 0;
-      $scope.turnsDisplay = -1;
+      $scope.displayCounter = -1;
       $scope.turnsTaken = [];
 
       var moves = [
@@ -162,11 +162,10 @@ thisApp
           $timeout(function(){
             customLoop(i);
           },200);
-          if (i==0) {
-            moving = false;
-          }
+        }else{
+          moving = false;
         }
-        $scope.turnsDisplay++
+        $scope.displayCounter++
       }
       customLoop($scope.turnsTaken.length-1);
 

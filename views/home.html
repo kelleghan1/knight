@@ -40,7 +40,7 @@
       <div ng-repeat='row in rows | orderBy: "-"' class='row'>
         <div ng-repeat='square in squares.slice(0, squares.length) | orderBy: "-"' class='square'>
           <div class="square_inner" ng-click="knight(-(square.id + 1), row.id)" id='{{ "s-" + (square.id + 1) + "c" + row.id}}' ng-class="{ 'greySquare' : square.id%2!==0 && row.id%2==0 || square.id%2==0 && row.id%2!==0, 'position': viewPos.includes('#s-' + (square.id + 1) + 'c' + row.id) }">
-            <p class='square_text'>{{-(square.id + 1)}}/{{row.id}}</p>
+            <p class='square_text' ng-class=>{{-(square.id + 1)}}/{{row.id}}</p>
           </div>
         </div>
       </div>
