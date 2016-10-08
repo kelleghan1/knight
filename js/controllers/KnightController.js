@@ -25,7 +25,6 @@ thisApp
       $scope.viewPos = [];
     }
 
-
     $scope.knight = function(a, b) {
       $scope.turns = 0;
       $scope.turnsDisplay = -1;
