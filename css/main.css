@@ -89,6 +89,10 @@ header {
   background-color: #e2e2e2;
 }
 
+.position {
+  background-color: #00ddff;
+}
+
 .square_text {
   box-sizing: border-box;
   flex-shrink: 1;
@@ -125,6 +129,8 @@ header {
   width: 50%;
   float: left;
 }
+
+
 
 @media (max-width: 1200px) {
   .square_inner:hover {

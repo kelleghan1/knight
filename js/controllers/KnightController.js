@@ -19,10 +19,13 @@ thisApp
       )
     }
 
+
     $scope.knight = function(a, b) {
       $scope.turns = 0;
       $scope.turnsDisplay = -1;
       $scope.turnsTaken = [];
+      $scope.viewPos = [];
+
       var moves = [
         {x:1, y:2},
         {x:2, y:1},
@@ -142,7 +145,7 @@ thisApp
       start(dest)
 
       function customLoop(i) {
-        angular.element( document.querySelector('#s' + $scope.turnsTaken[i].x + '-' + $scope.turnsTaken[i].y)).css({'background-color': '#00ddff'})
+        $scope.viewPos.push('#s' + $scope.turnsTaken[i].x + 'c' + $scope.turnsTaken[i].y)
         i--;
         if (i>=0) {$timeout(function(){customLoop(i);},300);}
         $scope.turnsDisplay++
@@ -152,9 +155,6 @@ thisApp
       return $scope.turns
 
     }
-
-    // console.log('end', $scope.knight(4,4));
-
 
   }
 ])
