@@ -10,9 +10,10 @@ thisApp
     $scope.rows = [];
     $scope.squares = [];
     $scope.viewPos = [];
+    var moving = null;
 
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 20; i++) {
       $scope.rows.push(
         {id:i}
       )
@@ -26,6 +27,11 @@ thisApp
     }
 
     $scope.knight = function(a, b) {
+      if (moving == true) {
+        return
+      }else{
+        moving = true;
+      }
       $scope.turns = 0;
       $scope.turnsDisplay = -1;
       $scope.turnsTaken = [];
@@ -149,9 +155,17 @@ thisApp
       start(dest)
 
       function customLoop(i) {
+
         $scope.viewPos.push('#s' + $scope.turnsTaken[i].x + 'c' + $scope.turnsTaken[i].y)
         i--;
-        if (i>=0) {$timeout(function(){customLoop(i);},200);}
+        if (i>=0) {
+          $timeout(function(){
+            customLoop(i);
+          },200);
+          if (i==0) {
+            moving = false;
+          }
+        }
         $scope.turnsDisplay++
       }
       customLoop($scope.turnsTaken.length-1);
