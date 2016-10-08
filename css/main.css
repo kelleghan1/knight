@@ -63,6 +63,14 @@ header {
   padding: 10px;
 }
 
+.clearMoves {
+  margin-left: 15px;
+  cursor: pointer;
+  flex-shrink: 1;
+  background-color: #00ddff;
+  padding: 10px;
+}
+
 .movesWrap {
   padding: 10px;
   flex-shrink: 1;
@@ -199,6 +207,10 @@ header {
     border: 2px solid black;
   }
 
+  .clearMoves {
+    margin-left: 0;
+  }
+
   .square_inner:hover > .square_text {
     padding: 3px;
     position: relative;
@@ -241,6 +253,10 @@ header {
     min-width: 20px;
     min-height: 20px;
     border: 2px solid black;
+  }
+
+  .clearMoves {
+    margin-left: 0;
   }
 
   .square_inner:hover > .square_text {
