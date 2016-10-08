@@ -12,7 +12,6 @@ thisApp
     $scope.viewPos = [];
     var moving = null;
 
-
     for (var i = 0; i < 20; i++) {
       $scope.rows.push(
         {id:i}
@@ -27,13 +26,13 @@ thisApp
     }
 
     $scope.knight = function(a, b) {
-      if (moving == true || isNaN(a) == true || isNaN(b) == true) {
+      if (moving == true) {
         return
       }else{
         moving = true;
       }
       $scope.turns = 0;
-      $scope.displayCounter = -1;
+      $scope.turnsDisplay = -1;
       $scope.turnsTaken = [];
 
       var moves = [
@@ -51,8 +50,6 @@ thisApp
         x: parseInt(a),
         y: parseInt(b)
       }
-
-      // angular.element( document.querySelectorAll('.square_inner')).css({'background-color': 'white'})
 
       $scope.turnsTaken.push(dest)
 
@@ -165,7 +162,7 @@ thisApp
         }else{
           moving = false;
         }
-        $scope.displayCounter++
+        $scope.turnsDisplay++
       }
       customLoop($scope.turnsTaken.length-1);
 

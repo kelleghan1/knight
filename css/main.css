@@ -123,7 +123,7 @@ header {
   position: absolute;
   z-index: 10000;
   font-size: 8px;
-  transform: scale(2.7);
+  transform: scale(2.9);
   min-width: 20px;
   min-height: 20px;
   border: 2px solid black;
@@ -147,12 +147,14 @@ header {
   float: left;
 }
 
+
+
 @media (max-width: 1200px) {
   .square_inner:hover {
     position: absolute;
     z-index: 10000;
     font-size: 8px;
-    transform: scale(2);
+    transform: scale(2.2);
     min-width: 20px;
     min-height: 20px;
     border: 2px solid black;
@@ -178,7 +180,7 @@ header {
     position: absolute;
     z-index: 10000;
     font-size: 8px;
-    transform: scale(1.6);
+    transform: scale(1.8);
     min-width: 20px;
     min-height: 20px;
     border: 2px solid black;
@@ -199,7 +201,7 @@ header {
     position: absolute;
     z-index: 10000;
     font-size: 5px;
-    transform: scale(1.3);
+    transform: scale(1.5);
     min-width: 20px;
     min-height: 20px;
     border: 2px solid black;
@@ -219,20 +221,28 @@ header {
   }
 
   .optionWrap {
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+    margin: 0 0 10px 0;
+
     padding: 10px;
     display: block;
   }
 
   .submitWrap {
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+    margin: 0 0 10px 0;
+
     padding: 10px;
     display: block;
   }
 
+  .clearMoves {
+    margin: 0 0 10px 0;
+  }
+
   .movesWrap {
     padding: 10px;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
     float: none;
     display: block;
   }
@@ -247,14 +257,14 @@ header {
     position: absolute;
     z-index: 10000;
     font-size: 8px;
-    transform: scale(1);
+    transform: scale(1.2);
     min-width: 20px;
     min-height: 20px;
     border: 2px solid black;
   }
 
   .clearMoves {
-    margin-left: 0;
+    margin: 0 0 10px 0;
   }
 
   .square_inner:hover > .square_text {
